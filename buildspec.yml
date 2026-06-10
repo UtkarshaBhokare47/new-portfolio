@@ -10,11 +10,6 @@ phases:
       - echo Build started...
       - echo Nothing to build for static website
 
-  post_build:
-    commands:
-      - echo Deploying to S3...
-      - aws s3 sync . s3://your-bucket-name --delete
-
 artifacts:
   files:
     - '**/*'
