@@ -1,9 +1,10 @@
 version: 0.2
 
 phases:
-  install:
+  build:
     commands:
-      - echo Installing...
+      - echo "Deploying to S3..."
+      - aws s3 sync . s3://git-pro-10 --delete
 
 artifacts:
   files:
